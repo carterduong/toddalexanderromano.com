@@ -1,4 +1,5 @@
 import {defineField} from 'sanity'
+import {blocks} from './blocks/blocks'
 
 const projects = defineField({
   name: 'projects',
@@ -24,6 +25,12 @@ const projects = defineField({
             .slice(0, 200),
       },
       validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'content',
+      title: 'Content',
+      type: 'array',
+      of: blocks,
     }),
   ],
 })
