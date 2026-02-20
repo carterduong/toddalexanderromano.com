@@ -34,7 +34,7 @@ const structure: StructureResolver = (S) =>
 
 export default defineConfig({
   name: 'default',
-  title: 'TAR',
+  title: 'Todd Alexander Romano',
 
   projectId: 'de2u7qot',
   dataset: 'production',
