@@ -24,6 +24,18 @@ export const home = defineType({
             }),
             image,
           ],
+          preview: {
+            select: {
+              title: 'project.title',
+              media: 'image.asset',
+            },
+            prepare({title, media}) {
+              return {
+                title: title,
+                media: media,
+              }
+            },
+          },
         }),
       ],
       validation: (Rule) => Rule.required().min(1),
