@@ -33,6 +33,24 @@ const project = defineField({
       of: blocks,
     }),
   ],
+  preview: {
+    select: {
+      title: 'title',
+      image0: 'content.0.images.0.asset',
+      image1: 'content.1.images.0.asset',
+      image2: 'content.2.images.0.asset',
+      image3: 'content.3.images.0.asset',
+      image4: 'content.4.images.0.asset',
+    },
+    prepare({title, image0, image1, image2, image3, image4}) {
+      const media = image0 || image1 || image2 || image3 || image4
+
+      return {
+        title,
+        media,
+      }
+    },
+  },
 })
 
 export {project}
