@@ -3,6 +3,7 @@ import {structureTool} from 'sanity/structure'
 import type {StructureResolver} from 'sanity/structure'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemaTypes'
+import {HomeIcon, DocumentIcon, UserIcon, EnvelopeIcon, CogIcon} from '@sanity/icons'
 
 const singletonActions = new Set(['publish', 'discardChanges', 'restore'])
 const singletonTypes = new Set(['home', 'profile', 'contact', 'settings'])
@@ -11,13 +12,23 @@ const structure: StructureResolver = (S) =>
   S.list()
     .title('Site')
     .items([
-      S.listItem().title('Home').child(S.document().schemaType('home').documentId('home')),
-      S.documentTypeListItem('project').title('Projects'),
-      S.listItem().title('Profile').child(S.document().schemaType('profile').documentId('profile')),
-      S.listItem().title('Contact').child(S.document().schemaType('contact').documentId('contact')),
+      S.listItem()
+        .title('Home')
+        .icon(HomeIcon)
+        .child(S.document().schemaType('home').documentId('home')),
+      S.documentTypeListItem('project').title('Projects').icon(DocumentIcon),
+      S.listItem()
+        .title('Profile')
+        .icon(UserIcon)
+        .child(S.document().schemaType('profile').documentId('profile')),
+      S.listItem()
+        .title('Contact')
+        .icon(EnvelopeIcon)
+        .child(S.document().schemaType('contact').documentId('contact')),
       S.divider(),
       S.listItem()
         .title('Settings')
+        .icon(CogIcon)
         .child(S.document().schemaType('settings').documentId('settings')),
     ])
 
