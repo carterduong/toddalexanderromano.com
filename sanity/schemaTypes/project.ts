@@ -1,8 +1,8 @@
 import {defineField} from 'sanity'
 import {blocks} from './blocks/blocks'
 
-const projects = defineField({
-  name: 'projects',
+const project = defineField({
+  name: 'project',
   title: 'Projects',
   type: 'document',
   fields: [
@@ -35,4 +35,4 @@ const projects = defineField({
   ],
 })
 
-export {projects}
+export {project}

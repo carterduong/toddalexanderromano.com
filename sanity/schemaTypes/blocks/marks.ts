@@ -51,7 +51,7 @@ const baseMarks = {
         {
           name: 'reference',
           type: 'reference',
-          to: [{type: 'projects'}],
+          to: [{type: 'project'}],
         },
       ],
     },

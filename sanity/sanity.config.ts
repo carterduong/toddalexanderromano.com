@@ -12,7 +12,7 @@ const structure: StructureResolver = (S) =>
     .title('Site')
     .items([
       S.listItem().title('Home').child(S.document().schemaType('home').documentId('home')),
-      S.documentTypeListItem('projects').title('Projects'),
+      S.documentTypeListItem('project').title('Projects'),
       S.listItem().title('Profile').child(S.document().schemaType('profile').documentId('profile')),
       S.listItem().title('Contact').child(S.document().schemaType('contact').documentId('contact')),
       S.divider(),

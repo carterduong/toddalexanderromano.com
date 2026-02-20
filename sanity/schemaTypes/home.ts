@@ -9,8 +9,11 @@ export const home = defineType({
       name: 'featuredProjects',
       title: 'Featured Projects',
       type: 'array',
-      of: [{type: 'reference', to: [{type: 'projects'}]}],
+      of: [{type: 'reference', to: [{type: 'project'}]}],
       validation: (Rule) => Rule.required().min(1),
     }),
   ],
+  preview: {
+    prepare: () => ({title: 'Home'}),
+  },
 })

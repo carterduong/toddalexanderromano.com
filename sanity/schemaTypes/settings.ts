@@ -15,9 +15,23 @@ const settings = defineField({
           title: 'Title',
           type: 'string',
         }),
+        defineField({
+          name: 'description',
+          title: 'Description',
+          type: 'text',
+        }),
+        defineField({
+          name: 'keywords',
+          title: 'Keywords',
+          type: 'array',
+          of: [{type: 'string'}],
+        }),
       ],
     }),
   ],
+  preview: {
+    prepare: () => ({title: 'Settings'}),
+  },
 })
 
 export {settings}

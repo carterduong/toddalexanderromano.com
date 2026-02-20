@@ -5,6 +5,9 @@ const profile = defineField({
   name: 'profile',
   title: 'Profile',
   type: 'document',
+  preview: {
+    prepare: () => ({title: 'Profile'}),
+  },
   fields: [
     defineField({
       name: 'content',
